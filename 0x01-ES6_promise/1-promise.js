@@ -3,7 +3,7 @@ export default function getFullResponseFromApit(success){
         if(success){
             resolve({
                 status: 200,
-                bosy: 'Success'
+                bosy: 'Success',
             });
         } else {
             reject('The fake API is no working currently');
