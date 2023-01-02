@@ -70,39 +70,85 @@ Car.start();
 //inheritance >> A child class can inherit all the methods
 //              and properties from another class
 
+// class Animal{
+//     alive= true;
+//     eat(){
+//         console.log(`This ${this.name} is eating`);
+//     }
+//     sleep(){
+//         console.log(`This ${this.name} is sleeping`);
+//     }
+
+// }
+
+// class Rabbit extends Animal{
+//     name = "rabbit";
+//     run(){
+//         console.log(`This ${this.name} is running`);
+//     }
+// }
+
+// class Fish extends Animal{
+//     name = "Fish";
+//     swim(){
+//         console.log(`This ${this.name} swimming`);
+//     }
+// }
+
+// class Hawk extends Animal{
+//     name = "Hawk";
+//     fly(){
+//         console.log(`This ${this.name} flying`);
+//     }
+// }
+
+// const Bunny = new Rabbit();
+// Bunny.eat();
+// const Samaki = new Fish();
+// Samaki.sleep();
+
+//Super key word >> Refers to the parent class
+//                > Used to invoke constructor of a parent class. 
+
 class Animal{
-    alive= true;
-    eat(){
-        console.log(`This ${this.name} is eating`);
-    }
-    sleep(){
-        console.log(`This ${this.name} is sleeping`);
+
+    constructor(name,age){
+        this.name = name;
+        this.age = age;
     }
 
+    makeSound(){
+        console.log("Animal makes noise")
+    }
+   
 }
 
 class Rabbit extends Animal{
-    name = "rabbit";
-    run(){
-        console.log(`This ${this.name} is running`);
+    constructor(name, age, runSpeed){
+        super(name, age);
+        this.runSpeed = runSpeed;
     }
 }
 
 class Fish extends Animal{
-    name = "Fish";
+    constructor(name, age, swimSpeed){
+        super(name, age);
+        this.swimSpeed = swimSpeed;
+    }
+
     swim(){
-        console.log(`This ${this.name} swimming`);
+        console.log(`${this.name} is swimming`)
     }
 }
 
 class Hawk extends Animal{
-    name = "Hawk";
-    fly(){
-        console.log(`This ${this.name} flying`);
+    constructor(name, age, flySpeed){
+        super(name,age);
+        self.flySpeed = flySpeed;
     }
 }
 
-const Bunny = new Rabbit();
-Bunny.eat();
-const Samaki = new Fish();
-Samaki.sleep();
+const fishman = new Fish("shark",34,234);
+fishman.swim();
+fishman.makeSound();
+console.log(fishman.name);
