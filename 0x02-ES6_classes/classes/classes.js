@@ -43,6 +43,66 @@ console.log(student1.age);
 console.log(student1.gpa);
 student1.study();
 
-// static methods
+// static methods >> Belong to the class and not the objects.
+//                 > Useful for caches, fixed configurations.
+//                 > useful for utility functions.
 
+class Car{
+    static numberOfCars = 0;
 
+    constructor(model){
+        this.model = model;
+        Car.numberOfCars +=1;
+    }
+
+    //static method
+    static start(){
+        console.log("3..2..1..GO!!");
+    }
+}
+
+const car1 = new Car("Tesla");
+const car2 = new Car("Mazda");
+const car3 = new Car("BMW");
+console.log(Car.numberOfCars);
+Car.start();
+
+//inheritance >> A child class can inherit all the methods
+//              and properties from another class
+
+class Animal{
+    alive= true;
+    eat(){
+        console.log(`This ${this.name} is eating`);
+    }
+    sleep(){
+        console.log(`This ${this.name} is sleeping`);
+    }
+
+}
+
+class Rabbit extends Animal{
+    name = "rabbit";
+    run(){
+        console.log(`This ${this.name} is running`);
+    }
+}
+
+class Fish extends Animal{
+    name = "Fish";
+    swim(){
+        console.log(`This ${this.name} swimming`);
+    }
+}
+
+class Hawk extends Animal{
+    name = "Hawk";
+    fly(){
+        console.log(`This ${this.name} flying`);
+    }
+}
+
+const Bunny = new Rabbit();
+Bunny.eat();
+const Samaki = new Fish();
+Samaki.sleep();
