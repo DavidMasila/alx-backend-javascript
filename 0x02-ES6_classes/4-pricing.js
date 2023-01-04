@@ -1,8 +1,7 @@
 import Currency from './3-currency';
 
-export default class Pricing extends Currency {
-  constructor(code, name, amount, currency) {
-    super(code, name);
+export default class Pricing {
+  constructor(amount, currency) {
     this._amount = amount;
     this._currency = currency;
   }
@@ -16,11 +15,11 @@ export default class Pricing extends Currency {
   }
 
   set amount(value) {
-    this._amount = value;
+    if (typeof amount === 'number') this._amount = value;
   }
 
   set currency(value) {
-    this._currency = value;
+    if (currency instanceof Currency) this._currency = value;
   }
 
   displayFullPrice() {
