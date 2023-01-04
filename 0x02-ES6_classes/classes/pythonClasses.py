@@ -20,3 +20,28 @@ class Cow(Animal):
 
 COWOne = Cow("Masila","David","Mwendwa")
 COWOne.soundMade()
+
+from abc import ABC, abstractmethod 
+
+class Vehicle(ABC):
+    @abstractmethod
+    def go(self):
+        pass
+
+    @abstractmethod
+    def stop(self):
+        pass
+
+class Car(Vehicle):
+    def go(self):
+        print('Car driven')
+
+    def stop(self):
+        print('Car stopped')
+
+class Motocycle(Vehicle):
+    def go(self):
+        print('Cycle driven')
+
+    def stop(self):
+        print('Cycle stopped')

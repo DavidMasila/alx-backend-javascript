@@ -152,3 +152,15 @@ const fishman = new Fish("shark",34,234);
 fishman.swim();
 fishman.makeSound();
 console.log(fishman.name);
+
+//abstract classes 
+
+class Shape{
+    constructor(color){
+        if(new.target === Shape){
+            throw new Error ('This class cannot be instanciated ')
+        }
+
+        this._color = color
+    }
+}
