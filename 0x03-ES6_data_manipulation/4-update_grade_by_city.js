@@ -1,6 +1,6 @@
 export default function updateStudentGradeByCity(list, city, newGrades) {
   if (Array.isArray(list, newGrades) && typeof city === 'string') {
-    const newList = list.filter((element) => element.location === city)
+    return newList = list.filter((element) => element.location === city)
       .map((element) => {
         if (newGrades.id === element.id) {
           element.grade = newGrades.grade;
@@ -8,7 +8,6 @@ export default function updateStudentGradeByCity(list, city, newGrades) {
           element.grade = 'NA';
         }
       });
-      return newList;
   }
   return [];
 }
