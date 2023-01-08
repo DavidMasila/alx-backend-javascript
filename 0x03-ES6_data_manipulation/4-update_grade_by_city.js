@@ -7,6 +7,7 @@ export default function updateStudentGradeByCity(list, city, newGrades) {
         } else {
           element.grade = 'NA';
         }
+        return newList;
       });
   }
   return [];
