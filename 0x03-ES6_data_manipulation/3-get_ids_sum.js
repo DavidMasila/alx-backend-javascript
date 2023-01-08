@@ -1,6 +1,7 @@
 export default function getStudentIdsSum(list) {
   if (Array.isArray(list)) {
-    const totalIds = list.reduce((total, element) => total + element.id);
+    const ids = list.map((element) => element.id)
+    const totalIds = ids.reduce((total, element) => total + element);
     return totalIds;
   }
   return [];
