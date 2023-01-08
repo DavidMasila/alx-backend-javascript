@@ -26,4 +26,4 @@ dv1.setInt8(11, 42);
 //put "42" in slot 11 of the buffer though view1
 let num = dv2.getInt8(1) // gets 11th slot as per DataView accssed
 console.log(num)
-//This will give 42 because we set the 11th slot to be 
+//This will give 42 because we set the 11th slot to be 42
